@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "description": "Premium noise-canceling wireless headphones with 30-hour battery life. Features deep bass, crystal clear audio, and comfortable over-ear design perfect for music lovers and professionals.",
+    "price": 99.99,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop",
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch Pro",
+    "description": "Advanced smartwatch with health monitoring, GPS tracking, and 7-day battery life. Water-resistant design with customizable watch faces and fitness tracking features.",
+    "price": 199.99,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop",
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Laptop Backpack",
+    "description": "Durable laptop backpack with USB charging port and anti-theft design. Fits 15.6 inch laptops with multiple compartments for organization.",
+    "price": 49.99,
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop",
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Mechanical Keyboard",
+    "description": "RGB mechanical gaming keyboard with blue switches. Features customizable lighting, programmable keys, and durable aluminum frame.",
+    "price": 79.99,
+    "image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500&h=500&fit=crop",
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse with precision tracking and silent clicks. Long battery life and comfortable grip for all-day use.",
+    "price": 29.99,
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&h=500&fit=crop",
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Portable Charger",
+    "description": "20000mAh portable power bank with fast charging. Charges multiple devices simultaneously with LED power indicator.",
+    "price": 39.99,
+    "image": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500&h=500&fit=crop",
+    "category": "Electronics",
+    "inStock": false
+  },
+  {
+    "id": 7,
+    "name": "Desk Lamp LED",
+    "description": "Modern LED desk lamp with adjustable brightness and color temperature. Touch control with USB charging port built-in.",
+    "price": 34.99,
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&h=500&fit=crop",
+    "category": "Home",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "name": "Coffee Mug Warmer",
+    "description": "Electric coffee mug warmer with auto shut-off. Keeps your drinks at the perfect temperature all day long.",
+    "price": 24.99,
+    "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop",
+    "category": "Home",
+    "inStock": true
+  }
+]
