@@ -51,20 +51,31 @@ export default function AddItemPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Add New Item</h1>
-          <p className="text-gray-600 mt-1">Fill in the details below</p>
+    <div className="min-h-screen bg-gray-50 pb-20">
+      {/* --- HEADER SECTION (OPTION 1 STYLE: LIGHT & VISIBLE) --- */}
+      <div className="bg-white border-b border-gray-100 pt-12 pb-32">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/items"
+            className="inline-flex items-center text-slate-500 hover:text-blue-600 font-medium transition-colors mb-6"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Products
+          </Link>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Add New Product</h1>
+          <p className="text-slate-500 mt-2 text-lg">Inventory Management System</p>
         </div>
+      </div>
 
-        {/* Form */}
-        <div className="bg-white rounded-2xl shadow-lg p-8">
+      {/* --- FORM SECTION --- */}
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20">
+        <div className="bg-white rounded-3xl shadow-xl shadow-gray-200/60 p-8 md:p-10 border border-gray-100">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider">
                 Product Name
               </label>
               <input
@@ -72,15 +83,15 @@ export default function AddItemPage() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
-                placeholder="Enter product name"
+                className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-900"
+                placeholder="e.g. Mechanical Keyboard"
                 required
               />
             </div>
 
             {/* Description */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider">
                 Description
               </label>
               <textarea
@@ -88,42 +99,45 @@ export default function AddItemPage() {
                 value={formData.description}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
-                placeholder="Enter product description"
+                className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none text-slate-900"
+                placeholder="Describe the product features..."
                 required
               />
             </div>
 
             {/* Price and Category Row */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Price */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider">
                   Price ($)
                 </label>
-                <input
-                  type="number"
-                  name="price"
-                  value={formData.price}
-                  onChange={handleChange}
-                  step="0.01"
-                  min="0"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
-                  placeholder="0.00"
-                  required
-                />
+                <div className="relative">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">$</span>
+                  <input
+                    type="number"
+                    name="price"
+                    value={formData.price}
+                    onChange={handleChange}
+                    step="0.01"
+                    min="0"
+                    className="w-full pl-10 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-900 font-semibold"
+                    placeholder="0.00"
+                    required
+                  />
+                </div>
               </div>
 
               {/* Category */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider">
                   Category
                 </label>
                 <select
                   name="category"
                   value={formData.category}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all appearance-none cursor-pointer text-slate-900 font-medium"
                   required
                 >
                   <option value="">Select category</option>
@@ -138,7 +152,7 @@ export default function AddItemPage() {
 
             {/* Image URL */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider">
                 Image URL
               </label>
               <input
@@ -146,40 +160,56 @@ export default function AddItemPage() {
                 name="image"
                 value={formData.image}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
-                placeholder="https://example.com/image.jpg"
+                className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-900"
+                placeholder="https://images.unsplash.com/..."
                 required
               />
             </div>
 
-            {/* In Stock Checkbox */}
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                name="inStock"
-                checked={formData.inStock}
-                onChange={handleChange}
-                className="h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
-              />
-              <label className="ml-3 text-sm font-medium text-gray-700">
-                Item is in stock
+            {/* In Stock Toggle */}
+            <div className="flex items-center justify-between p-5 bg-slate-50 rounded-2xl border border-slate-100">
+              <div>
+                <p className="font-bold text-slate-900">In Stock Availability</p>
+                <p className="text-sm text-slate-500">Ready for immediate shipping?</p>
+              </div>
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  name="inStock"
+                  checked={formData.inStock}
+                  onChange={handleChange}
+                  className="sr-only peer"
+                />
+                <div className="w-14 h-7 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:rounded-full after:h-5 after:w-6 after:transition-all peer-checked:bg-blue-600"></div>
               </label>
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Link
                 href="/items"
-                className="flex-1 text-center py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex-1 text-center py-4 border-2 border-slate-200 rounded-2xl text-slate-600 font-bold hover:bg-slate-50 hover:border-slate-300 transition-all order-2 sm:order-1"
               >
                 Cancel
               </Link>
+              
+              {/* --- SLATE BUTTON STYLE --- */}
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:bg-blue-400"
+                className="flex-1 bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg shadow-slate-200 disabled:opacity-50 disabled:cursor-not-allowed order-1 sm:order-2"
               >
-                {loading ? "Adding..." : "Add Item"}
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Adding...
+                  </span>
+                ) : (
+                  "Create Product"
+                )}
               </button>
             </div>
           </form>
