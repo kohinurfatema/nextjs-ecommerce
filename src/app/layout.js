@@ -18,6 +18,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ToastProvider from "@/components/ToastProvider";
 
 // Font configuration - Next.js optimizes font loading automatically
 const geistSans = Geist({
@@ -42,6 +43,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Toast notifications */}
+        <ToastProvider />
+
         {/* Navbar appears on ALL pages */}
         <Navbar />
 

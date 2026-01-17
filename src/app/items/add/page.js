@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function AddItemPage() {
   const router = useRouter();
@@ -41,10 +42,17 @@ export default function AddItemPage() {
       });
 
       if (response.ok) {
-        router.push("/items");
+        toast.success("Product created successfully!");
+        // Small delay to show toast before redirect
+        setTimeout(() => {
+          router.push("/items");
+        }, 1000);
+      } else {
+        toast.error("Failed to create product");
       }
     } catch (error) {
       console.error("Error adding item:", error);
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
